@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">UI Reactive</string>
+    <string name="tab_me">Me</string>
+    <string name="tab_report">Report</string>
+    <string name="test">Test</string>
+    <string name="dagger_sample">UI Reactive</string>
+
+</resources>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.devspark.robototextview.widget.RobotoTextView
+        android:id="@+id/action_bar_title_text"
+        style="@style/AppTheme.label.actionbar.title"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/app_primary_color"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text="@string/tab_report" />
+</merge>
