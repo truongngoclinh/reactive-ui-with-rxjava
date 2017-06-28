@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="BaseActionMode" parent="Widget.AppCompat.ActionMode">
+        <item name="background">@color/default_red</item>
+        <item name="titleTextStyle">@style/ActionBarTitle</item>
+    </style>
+
+    <style name="BaseToolBar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="android:textColorPrimary">@color/action_bar_text</item>
+        <item name="android:subtitleTextStyle">@style/SubtitleTextStyle</item>
+        <item name="android:subtitleTextAppearance" tools:targetApi="lollipop">
+            @style/SubtitleTextStyle
+        </item>
+        <item name="android:textColorHint">#66FFFFFF</item>
+        <item name="subtitleTextStyle">@style/SubtitleTextStyle</item>
+        <item name="subtitleTextAppearance">@style/SubtitleTextStyle</item>
+        <item name="colorControlNormal">@color/common_white</item>
+    </style>
+
+    <style name="BaseToolBarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="colorControlNormal">@color/common_white</item>
+    </style>
+
+    <style name="TransparentToolBar" parent="ThemeOverlay.AppCompat.ActionBar">
+        <item name="colorControlNormal">@color/common_white</item>
+        <item name="android:textColorPrimary">@color/common_white</item>
+    </style>
+
+    <style name="ToolbarSpinner" parent="Widget.AppCompat.Light.Spinner.DropDown.ActionBar">
+        <item name="android:overlapAnchor" tools:targetApi="lollipop">false</item>
+        <item name="overlapAnchor">false</item>
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="SubtitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">#EEEEEE</item>
+    </style>
+</resources>

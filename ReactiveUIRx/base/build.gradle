@@ -1,0 +1,36 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        targetSdkVersion versions.targetSdk
+        versionCode versions.code
+        versionName versions.name
+    }
+
+    // this is required to be able to compile this module in different configuration
+    publishNonDefault true
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    debugCompile project(path: ':utils', configuration: 'debug')
+    debugCompile project(path: ':databases', configuration: 'debug')
+
+    compile libraries.supportAnnotations
+    compile libraries.supportAppCompat
+    compile libraries.dagger
+    compile libraries.javaxAnnotations
+    compile libraries.rxJava
+    compile libraries.rxAndroid
+    compile libraries.supportDesign
+}

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--base-->
+    <dimen name="default_button_height">52dp</dimen>
+    <dimen name="default_drawable_padding">8dp</dimen>
+    <dimen name="default_round_radius">8dp</dimen>
+
+    <!--action bar -->
+    <dimen name="action_bar_height">56dp</dimen>
+    <dimen name="action_bar_text_size">20sp</dimen>
+    <dimen name="action_bar_icon_width">50dp</dimen>
+
+    <!--sliding tab-->
+    <dimen name="tab_height">50dp</dimen>
+    <dimen name="tab_text_size">18sp</dimen>
+
+    <!--home tab-->
+    <dimen name="home_tab_height">60dp</dimen>
+
+    <!-- Text -->
+    <dimen name="default_text_size_title">20sp</dimen>
+    <dimen name="default_text_size_primary">16sp</dimen>
+    <dimen name="default_text_size_secondary">14sp</dimen>
+    <dimen name="default_text_size_small">12sp</dimen>
+
+    <!--list common-->
+    <dimen name="list_item_height">60dp</dimen>
+    <dimen name="section_margin_top">18dp</dimen>
+    <dimen name="section_margin_bottom">15dp</dimen>
+    <dimen name="section_horizontal_margin">10dp</dimen>
+    <dimen name="section_vertical_margin">10dp</dimen>
+    <dimen name="section_header_height">32dp</dimen>
+    <dimen name="section_item_internal_padding">10dp</dimen>
+    <dimen name="section_item_thumbnail_size">40dp</dimen>
+    <dimen name="section_item_min_height">44dp</dimen>
+    <dimen name="section_tag_img_size">30dp</dimen>
+    <dimen name="list_item_margin">8dp</dimen>
+    <dimen name="list_item_shadow_height">3dp</dimen>
+    <dimen name="list_item_divider_inset">86dp</dimen>
+    <dimen name="list_item_divider_inset_setting">80dp</dimen>
+
+    <!--red dot badge-->
+    <dimen name="red_dot_badge_width">10dp</dimen>
+    <dimen name="red_dot_badge_height">10dp</dimen>
+    <dimen name="red_dot_badge_text_size">12sp</dimen>
+
+    <!--settings-->
+    <dimen name="settings_list_item_padding">25dp</dimen>
+    <dimen name="settings_list_item_height">48dp</dimen>
+    <dimen name="settings_list_item_icon_size">30dp</dimen>
+    <dimen name="settings_list_item_vertical_gap">12dp</dimen>
+
+    <!--game list-->
+    <dimen name="game_list_item_height">68dp</dimen>
+    <dimen name="game_list_item_button_height">35dp</dimen>
+    <dimen name="game_list_item_badge_height">25dp</dimen>
+    <dimen name="game_list_item_icon_size">56dp</dimen>
+    <dimen name="game_list_button_height">26dp</dimen>
+
+    <!--game achievement list-->
+    <dimen name="achievement_item_height">68dp</dimen>
+    <dimen name="achievement_game_item_height">148dp</dimen>
+    <dimen name="achievement_game_item_logo_width">102dp</dimen>
+    <dimen name="achievement_game_item_logo_height">64dp</dimen>
+    <dimen name="achievement_trophy_size">36dp</dimen>
+    <dimen name="achievement_trophy_icon_size">52dp</dimen>
+    <dimen name="achievement_trophy_hand_half">37dp</dimen>
+    <dimen name="achievement_trophy_hand_height">4dp</dimen>
+    <dimen name="achievement_trophy_hand_offset">-12dp</dimen>
+    <dimen name="achievement_detail_item_height">74dp</dimen>
+    <dimen name="achievement_item_icon_size">58dp</dimen>
+    <dimen name="achievement_redeem_result_item_icon_size">24dp</dimen>
+    <dimen name="achievement_redeem_result_item_height">32dp</dimen>
+    <dimen name="achievement_detail_game_banner_gradient_height">56dp</dimen>
+    <dimen name="achievement_detail_list_overlap_height">-28dp</dimen>
+    <dimen name="achievement_detail_download_btn_margin_bottom">36dp</dimen>
+
+    <!--game luckydraw-->
+    <dimen name="luckydraw_prize_item_icon_size">100dp</dimen>
+    <dimen name="luckydraw_history_list_item_icon_size">80dp</dimen>
+
+    <dimen name="chat_footer_text_size">11sp</dimen>
+
+    <dimen name="item_height">48dp</dimen>
+
+    <!-- dialog -->
+    <dimen name="diglog_button_height">36dp</dimen>
+    <dimen name="diglog_button_margin">6dp</dimen>
+
+    <dimen name="flat_button_height">36dp</dimen>
+    <dimen name="raise_button_radius">4dp</dimen>
+    <dimen name="section_vertical_title_height">16dp</dimen>
+    <dimen name="section_vertical_large_desc_size">34sp</dimen>
+    <dimen name="section_vertical_large_description_height">40dp</dimen>
+    <dimen name="section_item_large_vertical_item_height">96dp</dimen>
+    <dimen name="section_item_vertical_item_height">48dp</dimen>
+    <dimen name="section_item_vertical_item_content_spacing">8dp</dimen>
+    <dimen name="section_item_subtitle_height">48dp</dimen>
+    <dimen name="avatar_size_small">40dp</dimen>
+    <dimen name="avatar_size">48dp</dimen>
+    <dimen name="avatar_size_large">96dp</dimen>
+    <dimen name="avatar_size_exlarge">60dp</dimen>
+    <dimen name="user_profile_item_height">80dp</dimen>
+    <dimen name="item_horizontal_padding">16dp</dimen>
+    <dimen name="item_vertical_padding">8dp</dimen>
+    <dimen name="item_drawable_padding">14dp</dimen>
+    <dimen name="settings_item_height">64dp</dimen>
+    <dimen name="drop_down_meun_width">168dp</dimen>
+    <dimen name="notification_center_item_rounded_corner">4dp</dimen>
+    <dimen name="divider_top_size">1px</dimen>
+    <dimen name="divider_size">1dp</dimen>
+    <dimen name="banner_height">120dp</dimen>
+    <dimen name="update_dialog_horizontal_padding">22dp</dimen>
+    <dimen name="update_dialog_vertical_padding">20dp</dimen>
+    <dimen name="find_buddies_result_section_horizontal_padding">20dp</dimen>
+    <dimen name="find_buddies_result_section_height">28dp</dimen>
+    <dimen name="qr_code_size">240dp</dimen>
+
+    <dimen name="notification_group_list_item_min_height">60dp</dimen>
+</resources>
