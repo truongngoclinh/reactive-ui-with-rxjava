@@ -20,13 +20,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name="samples.linhtruong.com.uireactivewithrx.login.LoginActivity_"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name="samples.linhtruong.com.uireactivewithrx.home.HomeTabActivity_"
-            android:screenOrientation="portrait" />
-
     </application>
 
 </manifest>

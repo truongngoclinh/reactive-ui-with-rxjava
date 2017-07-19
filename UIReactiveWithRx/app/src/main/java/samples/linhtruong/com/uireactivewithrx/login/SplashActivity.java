@@ -1,17 +1,9 @@
 package samples.linhtruong.com.uireactivewithrx.login;
 
-import android.os.Bundle;
-import android.os.Handler;
-
 import org.androidannotations.annotations.EActivity;
 
-import javax.inject.Inject;
-
-import samples.linhtruong.com.base.BaseActivity;
+import samples.linhtruong.com.BaseActivity;
 import samples.linhtruong.com.uireactivewithrx.R;
-import samples.linhtruong.com.uireactivewithrx.app.App;
-import samples.linhtruong.com.uireactivewithrx.storage.LoginSession;
-import samples.linhtruong.com.uireactivewithrx.utils.Navigator;
 
 /**
  * CLASS DESCRIPTION
@@ -24,32 +16,4 @@ import samples.linhtruong.com.uireactivewithrx.utils.Navigator;
 @EActivity(R.layout.activity_splash)
 public class SplashActivity extends BaseActivity {
 
-    @Inject
-    LoginSession mLoginSession;
-
-    @Override
-    protected void onCreateUI(Bundle bundle) {
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                if (mLoginSession.isLogged()) {
-                    // user already logged, navigate directly to HomeTabActivity
-                    Navigator.navigateHomeActivity(SplashActivity.this);
-                } else {
-                    // not logged yet, request login
-                    Navigator.navigateLoginActivity(SplashActivity.this);
-                }
-            }
-        }, 2000);
-    }
-
-    @Override
-    protected void initDependency() {
-        App.getAppcomponent().inject(this);
-    }
-
-    @Override
-    protected boolean isValid() {
-        return true;
-    }
 }

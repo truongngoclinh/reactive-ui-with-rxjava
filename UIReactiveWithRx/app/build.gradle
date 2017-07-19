@@ -6,7 +6,7 @@ android {
     buildToolsVersion versions.buildTools
 
     defaultConfig {
-        applicationId "samples.linhtruong.com.dagger2sample"
+        applicationId "samples.linhtruong.com.uireactivewithrx"
         minSdkVersion versions.minSdk
         targetSdkVersion versions.targetSdk
         versionCode versions.code
@@ -34,15 +34,14 @@ android {
 dependencies {
     compile project(path: ':base')
 
-    apt libraries.androidAnnotations
-    compile libraries.androidAnnotationsApi
-
     apt libraries.daggerCompiler
     compile libraries.dagger
 
+    apt libraries.androidAnnotations
+    compile libraries.androidAnnotationsApi
+
     compile libraries.picasso
-    compile libraries.bolts
     compile libraries.robotoTextView
     compile libraries.stetho
-    compile libraries.loggingInterceptor
+
 }

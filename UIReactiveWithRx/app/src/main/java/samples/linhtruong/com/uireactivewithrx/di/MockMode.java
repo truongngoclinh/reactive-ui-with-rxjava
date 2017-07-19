@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
 /**
- * CLASS DESCRIPTION
+ * For mock api
  *
  * @author linhtruong
  * @date 4/6/17 - 13:46.

@@ -1,12 +1,20 @@
 package samples.linhtruong.com.uireactivewithrx.di.module;
 
+import com.google.gson.Gson;
+import com.google.gson.annotations.SerializedName;
 import dagger.Module;
 import dagger.Provides;
+import okhttp3.OkHttpClient;
+import samples.linhtruong.com.db.DbManager;
+import samples.linhtruong.com.manager.FileManager;
+import samples.linhtruong.com.network.http.GsonFactory;
+import samples.linhtruong.com.network.NetworkManager;
+import samples.linhtruong.com.network.http.OkHttpFactory;
+import samples.linhtruong.com.task.TaskManager;
+import samples.linhtruong.com.task.TaskResources;
 import samples.linhtruong.com.uireactivewithrx.app.App;
+import samples.linhtruong.com.uireactivewithrx.app.AppLifeCycleMonitor;
 import samples.linhtruong.com.uireactivewithrx.di.scope.ApplicationScope;
-import samples.linhtruong.com.uireactivewithrx.storage.DbManager;
-import samples.linhtruong.com.uireactivewithrx.storage.LoginSession;
-import samples.linhtruong.com.utils.LogUtils;
 
 /**
  * CLASS DESCRIPTION
@@ -20,9 +28,21 @@ import samples.linhtruong.com.utils.LogUtils;
 public class AppModule {
 
     private final App mApp;
+    private final FileManager mFileManager;
+    private final OkHttpClient mOkHttpClient;
+    private final Gson mGson;
 
     public AppModule(App app) {
         mApp = app;
+        mFileManager = new FileManager(mApp);
+        mGson = GsonFactory.build();
+        mOkHttpClient = OkHttpFactory.build(mFileManager.getCacheDir());
+    }
+
+    @ApplicationScope
+    @Provides
+    AppLifeCycleMonitor provideLifecycleMonitor() {
+        return new AppLifeCycleMonitor();
     }
 
     @ApplicationScope
@@ -31,16 +51,27 @@ public class AppModule {
         return mApp;
     }
 
-    @Provides
     @ApplicationScope
-    DbManager provideDBManager() {
-        LogUtils.d("[test scope] Appmodule: provideDBManager()");
+    @Provides
+    NetworkManager provideNetworkManager() {
+        return new NetworkManager(mApp, mOkHttpClient, mGson);
+    }
+
+    @ApplicationScope
+    @Provides
+    DbManager providerDbManager() {
         return new DbManager(mApp);
     }
 
     @ApplicationScope
     @Provides
-    LoginSession provideLoginSession() {
-        return new LoginSession(mApp);
+    TaskResources provideTaskResource() {
+        return new TaskResources();
+    }
+
+    @ApplicationScope
+    @Provides
+    TaskManager provideTaskManager() {
+        return new TaskManager();
     }
 }

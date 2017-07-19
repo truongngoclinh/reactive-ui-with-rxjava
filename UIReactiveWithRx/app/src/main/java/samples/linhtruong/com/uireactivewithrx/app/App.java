@@ -1,12 +1,11 @@
 package samples.linhtruong.com.uireactivewithrx.app;
 
-import android.app.Application;
-
+import android.content.res.Configuration;
 import com.facebook.stetho.Stetho;
-import io.realm.Realm;
+import samples.linhtruong.com.BaseApplication;
+import samples.linhtruong.com.helper.AppLogger;
+import samples.linhtruong.com.uireactivewithrx.BuildConfig;
 import samples.linhtruong.com.uireactivewithrx.di.component.AppComponent;
-import samples.linhtruong.com.uireactivewithrx.storage.DbManager;
-import samples.linhtruong.com.utils.LogUtils;
 import samples.linhtruong.com.utils.ScreenUtils;
 
 import javax.inject.Inject;
@@ -19,45 +18,58 @@ import javax.inject.Inject;
  * @organization VED
  */
 
-public class App extends Application {
-
-    private static volatile AppComponent mAppComponent;
+public class App extends BaseApplication {
 
     @Inject
-    DbManager mDbManager;
+    AppLifeCycleMonitor lifeCycleMonitor;
+
+    @Inject
+    AppLifeCycleManager lifeCycleManager;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
-        if (mDbManager == null) {
-            LogUtils.d("[test scope] before ... db manager is NULL");
-        } else {
-            LogUtils.d("[test scope] before ... db manager is OK");
-        }
-
         initDependency();
         initUtils();
+        initLogger();
+        initModules();
+    }
 
-        if (mDbManager == null) {
-            LogUtils.d("[test scope] after component created db manager is NULL");
-        } else {
-            LogUtils.d("[test scope] after component created db manager is OK");
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        //
+    }
+
+    private void initLogger() {
+        AppLogger.RELEASE = !BuildConfig.DEBUG;
+    }
+
+    private void initModules() {
+        registerActivityLifecycleCallbacks(lifeCycleMonitor);
+
+//        AppComponent component = (AppComponent) getComponent();
+        if (isMainProcess()) {
+            lifeCycleManager.onCreate();
         }
     }
 
     private void initDependency() {
-        mAppComponent = AppComponent.Initialiazer.init(this);
+        AppComponent component = AppComponent.Initialiazer.init(this);
+        setComponent(component);
+
+        component.inject(component.taskManager());
+        component.inject(component.taskResources());
+
+        component.inject(this);
+        component.inject(lifeCycleManager);
     }
 
     private void initUtils() {
         ScreenUtils.init(this);
-        Realm.init(this);
 
+        // 3rd lib
         Stetho.initializeWithDefaults(this);
-    }
-
-    public static AppComponent getAppcomponent() {
-        return mAppComponent;
     }
 }

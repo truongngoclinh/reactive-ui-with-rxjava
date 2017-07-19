@@ -20,7 +20,7 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;
 
-import samples.linhtruong.com.base.BaseActivity;
+import samples.linhtruong.com.BaseActivity;
 import samples.linhtruong.com.uireactivewithrx.R;
 
 /**
@@ -79,7 +79,7 @@ public class ActionBar extends LinearLayout implements View.OnClickListener {
                 public void onClick(View v) {
                     Context context = getContext();
                     if (context instanceof BaseActivity) {
-                        ((BaseActivity) context).onBack();
+//                        ((BaseActivity) context).onBack();
                     }
                 }
             });

@@ -15,7 +15,7 @@ public class LogUtils {
     private static final int E = 4;
 
 
-    private static final String TAG = "Sentry";
+    private static final String TAG = "UIReactive";
     private static final boolean IS_SHOW = true;
 
     private static int OTHERS = -1;
@@ -142,17 +142,12 @@ public class LogUtils {
                 i.className = traceElements[index + 1].getClassName();
                 i.methodName = traceElements[index + 1].getMethodName();
                 i.lineNumber = traceElements[index + 1].getLineNumber();
-
-
             } else {
 
                 i.className = traceElements[index].getClassName();
                 i.methodName = traceElements[index].getMethodName();
                 i.lineNumber = traceElements[index].getLineNumber();
-
             }
-
-
         }
 
         /*for (int j = traceElements.length - 1; j >= 3 ; j--) {
@@ -162,7 +157,6 @@ public class LogUtils {
             int lineNumber = traceElements[j].getLineNumber();
 
         }*/
-
 
         return i;
     }
